@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yes Ma'am 食堂</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Noto+Sans+HK:wght=400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+/* 使用你專屬設計的 Base64 像素游標，全網頁（包括按鈕、連結）強制套用 */
+html, body, a, button, input, select, .item {
+    cursor: url('data:image/x-icon;base64,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'), default !important;
+}
+        body { 
+            background: #a2d2ff; 
+            display: flex; flex-direction: column; align-items: center; padding: 20px;
+            font-family: 'Press Start 2P', monospace;
+        }
+        
+        .game-box { 
+            border: 8px solid #5d4037; 
+            background: #fdf5e6; 
+            padding: 25px; 
+            max-width: 800px; width: 100%; 
+            box-shadow: 10px 10px 0px #3e2723; 
+        }
+        
+        .title-container { 
+            text-align: center; margin-bottom: 30px; 
+            border: 4px solid #5d4037; padding: 20px; background: #ffccbc;
+        }
+        
+        .main-title { 
+            font-family: 'Noto Sans HK', sans-serif;
+            font-size: 32px; font-weight: 700;
+            color: #d84315; 
+            text-shadow: 2px 2px 0px #fff; 
+            margin-bottom: 10px;
+        }
+        
+    .sub-title-pixel {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 16px;       /* 可以自行調整大小 */
+    color: #5d4037;        /* 你的復古深啡色 */
+    letter-spacing: 2px;   /* 字體之間的間距 */
+    line-height: 1.4;
+    text-align: center;
+    margin-top: 5px;
+}
+        
+        .container { display: flex; gap: 20px; flex-wrap: wrap; }
+        .column { flex: 1; min-width: 320px; display: flex; flex-direction: column; gap: 8px; }
+        
+        .item { 
+            border: 3px solid #8d6e63; padding: 12px; background: #efebe9;
+            display: flex; align-items: center; cursor: pointer; transition: 0.2s;
+        }
+        .item:hover { background: #ffccbc; border: 3px solid #ff5722; }
+        
+        .icon { font-size: 16px; margin-right: 15px; display: flex; align-items: center; justify-content: center; }
+        .text-box { display: flex; flex-direction: column; width: 100%; }
+        
+        .title-zh { 
+            font-size: 20px; 
+            font-family: 'Noto Sans HK', sans-serif; 
+            font-weight: 700; 
+            color: #3e2723;
+            display: flex; flex-wrap: wrap; align-items: center; gap: 5px;
+        }
+        .title-en { font-size: 14px; color: #795548; margin-top: 4px; }
+
+        /* =======================================================
+           8-BIT 風格彈窗樣式 
+           ======================================================= */
+        .modal-overlay {
+            display: none; position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(62, 39, 35, 0.6); z-index: 9999;
+            justify-content: center; align-items: center; padding: 15px; box-sizing: border-box;
+        }
+        
+        .modal-content {
+            background-color: #ffffff; border: 6px solid #3e2723; 
+            box-shadow: 10px 10px 0px #5d4037; padding: 25px;
+            width: 100%; max-width: 550px; max-height: 85vh; overflow-y: auto;
+            box-sizing: border-box; animation: pixelPop 0.15s ease-out;
+        }
+
+        @keyframes pixelPop {
+            from { transform: scale(0.92); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .modal-content h2, .modal-content h3, .modal-content ul, .modal-content ol, .pixel-btn {
+            font-family: 'Courier New', Courier, monospace, 'Noto Sans HK', sans-serif;
+        }
+
+        .modal-content h2 {
+            margin-top: 0; font-size: 24px; font-weight: 700; color: #d84315; text-align: center; line-height: 1.4;
+        }
+
+        .pixel-hr { border: none; border-top: 5px dashed #5d4037; margin: 18px 0; }
+
+        .modal-body h3 {
+            font-size: 20px; font-weight: 700; color: #3e2723; margin-top: 25px; margin-bottom: 12px;
+            background-color: #ffccbc; padding: 6px 12px; display: inline-block;
+            border: 3px solid #3e2723; box-shadow: 3px 3px 0px #5d4037;
+        }
+
+        .modal-body ul, .modal-body ol { padding-left: 28px; font-size: 20px; line-height: 1.7; color: #3e2723; margin: 12px 0; }
+        .modal-body li { margin-bottom: 10px; list-style-position: outside; }
+        .modal-body ul li { list-style-type: "🍖 "; }
+        .modal-body ol li { list-style-type: "🔥 "; }
+
+        /* ==========================================
+           像素風儲值與通用按鈕
+           ========================================== */
+        .pixel-btn {
+            display: block; width: 100%; margin-top: 20px;
+            background-color: #d84315; color: #ffffff !important;
+            border: 4px solid #3e2723; padding: 12px; font-size: 18px; font-weight: bold;
+            cursor: pointer; box-shadow: 5px 5px 0px #5d4037; text-align: center;
+            box-sizing: border-box; transition: 0.05s; user-select: none;
+        }
+        .pixel-btn:hover { background-color: #ff5722; }
+        .pixel-btn:active { transform: translate(3px, 3px); box-shadow: 2px 2px 0px #5d4037; }
+
+        .close-btn { background-color: #e84118; margin-top: 15px; }
+        .close-btn:hover { background-color: #c23616; }
+
+        .support-btn-container { text-align: center; margin-top: 25px; }
+        .support-btn { display: inline-block; width: auto; padding: 12px 35px; background-color: #00a0e9; }
+        .support-btn:hover { background-color: #008cd1; }
+
+        /* ==========================================
+           儲值彈出視窗專用
+           ========================================== */
+        .pixel-modal-content-store {
+            position: relative; background: #f5f6fa; border: 6px solid #3e2723;
+            padding: 24px; text-align: center; width: 100%; max-width: 340px;
+            box-shadow: 12px 12px 0px 0px #5d4037; animation: pixelPop 0.15s ease-out;
+            box-sizing: border-box;
+        }
+        .pixel-title-store { font-family: 'Press Start 2P', monospace; font-size: 16px; color: #2f3640; margin: 0 0 12px 0; }
+        .pixel-text-store { font-family: 'Noto Sans HK', sans-serif; font-size: 15px; font-weight: bold; color: #718093; margin: 0 0 20px 0; }
+        .pixel-qr-border { display: inline-block; border: 4px solid #3e2723; padding: 8px; background: #ffffff; margin-bottom: 10px; box-shadow: inset 4px 4px 0px #dcdde1; }
+        .pixel-qr-img { width: 180px; height: 180px; display: block; image-rendering: pixelated; }
+    </style>
+</head>
+<body>
+
+<div class="game-box">
+   <div class="title-container">
+    <div class="main-title">《YES MA'AM 食堂》</div>
+
+  <div class="sub-title-pixel">HOME COOKING QUEST</div>
+    
+    <!-- 2. 中間提示區 -->
+    <div style="background-color: #ffffff; border: 3px solid #3e2723; padding: 15px 10px; margin: 15px auto 0 auto; max-width: 680px; width: 100%; box-sizing: border-box; text-align: center; box-shadow: 4px 4px 0px #5d4037;">
+        <!-- 中文維持正黑體 -->
+        <div style="font-family: 'Noto Sans HK', sans-serif; font-size: 19px; color: #3e2723; font-weight: bold; letter-spacing: 1px;">
+            今天你打算挑戰幾⭐⭐⭐難度？
+        </div>
+        <!-- 英文精準套用 Press Start 2P 字型 -->
+        <div style="font-family: 'Press Start 2P', monospace; font-size: 11px; color: #5d4037; margin-top: 10px; letter-spacing: 0px; line-height: 1.4;">
+            Which ⭐ difficulty do you dare to challenge today?
+        </div>
+    </div>
+</div>
+    
+    <!-- 菜單區域 -->
+    <div class="container" id="menu-area"></div>
+
+    <!-- 儲值支持按鈕 -->
+    <div class="support-btn-container">
+        <button id="supportBtn" class="pixel-btn support-btn">🪙 儲值 / 贊助支持</button>
+    </div>
+</div>
+
+<!-- =======================================================
+     整合版本：成就、免責聲明、與設計者整合框
+     ======================================================= -->
+<div style="max-width: 850px; width: 100%; margin-top: 25px; font-family: 'Noto Sans HK', monospace; box-sizing: border-box;">
+    <div style="background-color: #fcf8f2; border: 4px solid #4a3b32; padding: 20px; box-shadow: 6px 6px 0px #4a3b32;">
+        <div style="color: #e67e22; font-size: 16px; font-weight: bold; margin-bottom: 12px; letter-spacing: 1px;">🏆 ACHIEVEMENTS UNLOCKED (大師級成就已解鎖)</div>
+        <div style="font-size: 15px; margin-bottom: 8px; line-height: 1.5; color: #3e2723;">🔓 <b>[Yes Ma'am! 絕對服從]</b> 成功連續 7 日完美複製阿媽嘅住家飯味道。</div>
+        <div style="font-size: 15px; margin-bottom: 15px; line-height: 1.5; color: #3e2723;">🔓 <b>[街市至尊]</b> 買 01 號清蒸魚時，成功令魚販心甘情願送葱。</div>
+        
+        <!-- 內置分隔線 -->
+        <div style="border-top: 2px dashed #4a3b32; margin: 15px 0;"></div>
+
+        <!-- 免責聲明移入此處 -->
+        <div style="font-size: 12px; color: #7f8c8d; line-height: 1.6; text-align: justify;">
+            <div style="font-weight: bold; color: #626567; margin-bottom: 4px;">【免責聲明 / DISCLAIMER】</div>
+            <p style="margin: 4px 0 8px 0;">
+                廣東話：本食堂菜式均由 LV.-99 等阿廢傾力製作。鑊氣濃郁，極具「整定」成分。若因番茄炒蛋過甜、老火靚湯過熱而導致靈魂受到治癒，本網頁概不負責。星期日姐姐放假，廚房進入無敵（休息）狀態，敬請留意。
+            </p>
+            <p style="margin: 0 0 10px 0;">
+                English: All dishes are masterfully crafted by our LV.-100 Rubbish. Wok-hei is strong and results may vary based on Ate's mood. We accept no responsibility if your soul is deeply comforted by the sweetness of Tomato Eggs or the warmth of the soup. Ate enters Invincible (Rest) Mode on Sundays. Cook at your own risk.
+            </p>
+        </div>
+
+        <!-- 設計標籤移入此處 -->
+        <div style="text-align: right; font-size: 11px; font-weight: bold; color: #4a3b32; letter-spacing: 1px; margin-top: 10px;">
+            DESIGNED BY RUBBISH / 設計by 阿廢
+        </div>
+    </div>
+</div>
+
+<!-- =======================================================
+     動態 8-bit 任務詳情彈窗 HTML 結構
+     ======================================================= -->
+<div id="quest-modal" class="modal-overlay">
+    <div class="modal-content">
+        <h2 id="modal-title">01. 清蒸魚 Steamed Fish</h2>
+        <hr class="pixel-hr">
+        <div class="modal-body">
+            <h3>Ingredients / 食材清單</h3>
+            <ul id="modal-ingredients"></ul>
+            <h3>Cooking Steps / 烹飪步驟</h3>
+            <ol id="modal-steps"></ol>
+        </div>
+        <button id="close-modal-btn" class="pixel-btn">CLOSE QUEST / 關閉任務</button>
+    </div>
+</div>
+
+<!-- =======================================================
+     全新引入：像素風儲值商店彈出視窗 
+     ======================================================= -->
+<div id="qrModal" class="modal-overlay">
+    <div class="pixel-modal-content-store">
+        <h3 class="pixel-title-store">== SHOP ==</h3>
+        <p class="pixel-text-store">請用支付寶掃碼付款 / Support Rubbish</p>
+        <div class="pixel-qr-border">
+            <img src="https://i.ibb.co/XxtJGLBW/alipayqr-jpg.jpg" alt="支付寶收款碼" class="pixel-qr-img">
+        </div>
+        <button id="closeBtn" class="pixel-btn close-btn">CLOSE</button>
+    </div>
+</div>
+
+<!-- ==========================================
+   JavaScript 控制邏輯與 8-bit 音效合成器
+   ========================================== -->
+<script>
+    // 菜單資料庫
+    const dishes = [
+        { id: 1, zh: "清蒸魚⭐⭐⭐", en: "Steamed Fish", icon: "🐟" },
+        { id: 2, zh: "西蘭花炒雞柳⭐⭐", en: "Broccoli/Chicken", icon: "🥦" },
+        { id: 3, zh: "番茄炒蛋⭐", en: "Tomato Eggs", icon: "🍅" },
+        { id: 4, zh: "蒜蓉蒸蝦⭐⭐⭐", en: "Garlic Shrimp", icon: "🍤" },
+        { id: 5, zh: "蒸肉餅⭐⭐", en: "Steamed Pork", icon: "🍖" },
+        { id: 6, zh: "生炒排骨⭐⭐⭐⭐", en: "Sweet/Sour Pork", icon: "🐖" },
+        { id: 7, zh: "菜心炒牛肉⭐⭐", en: "Beef/Choy Sum", icon: "🥩" },
+        { id: 8, zh: "蒸水蛋⭐", en: "Steamed Egg", icon: "🥚" },
+        { id: 9, zh: "粟米魚塊⭐⭐⭐", en: "Fish/Corn Sauce", icon: "🌽" },
+        { id: 10, zh: "香菇蒸滑雞⭐⭐", en: "Steamed Chicken", icon: "🍗" },
+        { id: 11, zh: "豆豉鯪魚油麥菜⭐⭐⭐", en: "Lettcue/Dace", icon: "🥬" },
+        { id: 12, zh: "涼瓜炒牛肉⭐⭐⭐", en: "Beef/Bitter Melon", icon: "🍈" },
+        { id: 13, zh: "洋蔥豬扒⭐⭐", en: "Pork Chop/Onion", icon: "🥩" },
+        { id: 14, zh: "紅蘿蔔粟米豬骨湯⭐⭐⭐⭐", en: "Carrot Pork Soup", icon: "🥣" },
+        { id: 15, zh: "節瓜粉絲蝦米煲⭐⭐⭐", en: "Gourd Pot", icon: "🥘" },
+        { id: 16, zh: "豆腐火腩煲⭐⭐⭐⭐", en: "Tofu Roast Pork", icon: "🥘" },
+        { id: 17, zh: "肉碎蒸豆腐⭐", en: "Steamed Tofu", icon: "🍖" },
+        { id: 18, zh: "荷蘭豆炒臘腸⭐⭐", en: "Snow Peas Sausage", icon: "🌭" },
+        { id: 19, zh: "清炒芥蘭⭐", en: "Stir-fried Kale", icon: "🥬" },
+        { id: 20, zh: "鹹蛋蒸肉餅⭐⭐", en: "Pork Patty/Egg", icon: "🍖" },
+        { id: 21, zh: "豉椒炒蜆⭐⭐⭐⭐", en: "Clams Black Bean", icon: "🐚" },
+        { id: 22, zh: "粟米肉粒炒飯⭐⭐", en: "Corn Fried Rice", icon: "🍚" },
+        { id: 23, zh: "羅宋湯⭐⭐⭐", en: "Borscht Soup", icon: "🥣" },
+        { id: 24, zh: "南乳燜蓮藕⭐⭐⭐", en: "Braised Lotus Root", icon: "🥔" },
+        { id: 25, zh: "蒸鱸魚⭐⭐⭐", en: "Steamed Sea Bass", icon: "🐟" },
+        { id: 26, zh: "滑蛋蝦仁⭐⭐⭐⭐", en: "Scrambled Egg/Shrimp", icon: "🥚" },
+        { id: 27, zh: "薯仔燜雞塊⭐⭐", en: "Braised Chicken", icon: "🥔" },
+        { id: 28, zh: "紹菜粉絲煲⭐⭐", en: "Cabbage Pot", icon: "🥬" },
+        { id: 29, zh: "腰果炒雞丁⭐⭐⭐", en: "Cashew Chicken", icon: "🌰" },
+        { id: 30, zh: "冬瓜盅⭐⭐⭐⭐⭐", en: "Winter Melon Soup", icon: "🍈" }
+    ];
+
+    const questDatabase = {
+        1: { title: "01. 清蒸魚 Steamed Fish", ingredients: ["鮮魚 1 條 (Fresh fish x1)", "蔥 3 棵 (Green onions x3)", "薑 1 塊 (Ginger x1)", "蒸魚豉油 2 湯匙 (Seasoned soy sauce x2 tbsp)", "熟油 1 湯匙 (Hot cooking oil x1 tbsp)"], steps: ["將魚洗淨抹乾，擺入盤中，魚身鋪上少許薑絲。(Clean and dry the fish, place on a plate with shredded ginger.)", "大火蒸 8-10 分鐘至熟透，倒掉盤內腥水。(Steam over high heat for 8-10 minutes, then discard the fish water.)", "鋪上大量蔥絲，淋上滾燙熱油，最後倒入蒸魚豉油。(Top with green onions, drizzle with hot oil, and pour soy sauce over it.)"] },
+        2: { title: "02. 西蘭花炒雞柳 Broccoli with Chicken", ingredients: ["西蘭花 1 棵 (Broccoli x1)", "雞柳 200克 (Chicken strips 200g)", "蒜頭 2 瓣 (Garlic x2 cloves)", "生抽及生粉 各少許 (Soy sauce & cornstarch suitable amount)"], steps: ["雞柳切條，用生抽、生粉醃 15 分鐘；西蘭花切小朵汆水。(Slice and marinate chicken. Cut broccoli and blanch in boiling water.)", "熱鍋下油爆香蒜片，下雞柳炒至變色熟透。(Heat oil, sauté garlic, and stir-fry chicken until fully cooked.)", "加入西蘭花快速翻炒，加少許鹽調味即可。(Add broccoli, stir-fry quickly, and season with salt.)"] },
+        3: { title: "03. 番茄炒蛋 Tomato Eggs", ingredients: ["番茄 2 個 (Tomatoes x2)", "雞蛋 3 隻 (Eggs x3)", "糖 1 茶匙 (Sugar x1 tsp)", "蔥花 少許 (Green onions suitable amount)"], steps: ["雞蛋加少許鹽打散，下鍋炒至 7 熟盛起。(Beat eggs with salt, scramble until softly set, then set aside.)", "番茄切塊，下鍋炒至軟身出汁，加入糖調味。(Cut tomatoes into wedges, cook until soft and juicy, season with sugar.)", "倒回雞蛋快速翻炒均勻，撒上蔥花即可。(Return eggs to pan, mix quickly, and garnish with green onions.)"] },
+        4: { title: "04. 蒜蓉蒸蝦 Garlic Shrimp", ingredients: ["大蝦 8 隻 (Large shrimps x8)", "蒜頭 1 完整個 (Garlic x1 bulb)", "蔥花 少許 (Green onions suitable amount)", "生抽 1 湯匙 (Soy sauce x1 tbsp)"], steps: ["大蝦洗淨剪鬚，開背去蝦線，鋪在盤中。(Clean shrimps, butterfly the backs, remove veins, and arrange on plate.)", "蒜頭剁成蒜蓉，用熱油炒香，均勻鋪在蝦背上。(Mince garlic, sauté in hot oil until fragrant, spread evenly over shrimps.)", "大火蒸 5 分鐘，出鍋後撒蔥花，淋少許生抽與熱油。(Steam on high heat for 5 minutes. Top with scallions, soy sauce, and hot oil.)"] },
+        5: { title: "05. 蒸肉餅 Steamed Pork Patty", ingredients: ["半肥瘦豬肉碎 250克 (Minced pork 250g)", "生抽 1 湯匙 (Soy sauce x1 tbsp)", "生粉 1 茶匙 (Cornstarch x1 tsp)", "水 2 湯匙 (Water x2 tbsp)"], steps: ["肉碎加入生抽、生粉和水，順時針攪拌至順滑起膠。(Mix minced pork with soy sauce, starch, and water. Stir clockwise until sticky.)", "將肉碎平鋪在盤中，輕輕壓平。(Spread the minced pork evenly into a flat patty on a plate.)", "大火蒸 10-12 分鐘至熟透即可。(Steam over high heat for 10-12 minutes until fully cooked.)"] },
+        6: { title: "06. 生炒排骨 Sweet and Sour Pork Ribs", ingredients: ["排骨 300克 (Pork ribs 300g)", "青椒及紅椒 各半個 (Bell peppers x0.5 each)", "菠蘿塊 少許 (Pineapple chunks suitable amount)", "甜酸汁 [番茄醬、糖、醋] (Sweet & sour sauce)"], steps: ["排骨沾上生粉，炸至金黃酥脆撈起。(Coat ribs with cornstarch, deep fry until golden brown and crispy, then drain.)", "爆香青紅椒，倒入調配好的甜酸汁煮滾。(Sauté bell peppers, pour in the sweet and sour sauce mixture and bring to a boil.)", "加入排骨 and 菠蘿塊快速翻炒，讓每塊排骨裹上醬汁。(Add ribs and pineapples, toss quickly until well coated with sauce.)"] },
+        7: { title: "07. 菜心炒牛肉 Stir-fried Beef with Choy Sum", ingredients: ["菜心 250克 (Choy Sum 250g)", "牛肉片 150克 (Sliced beef 150g)", "蒜頭 2 瓣 (Garlic x2 cloves)", "蠔油 1 湯匙 (Oyster sauce x1 tbsp)"], steps: ["牛肉片用生抽及生粉醃製；菜心洗淨切段。(Marinate beef with soy sauce and starch. Wash and cut choy sum.)", "大火爆炒牛肉至 8 熟盛起。再起盤爆蒜，炒熟菜心。(Stir-fry beef until 80% cooked, set aside. Sauté garlic and cook choy sum.)", "倒回牛肉，加入蠔油，大火快速翻炒均勻。(Return beef to the pan, add oyster sauce, and stir-fry quickly over high heat.)"] },
+        8: { title: "08. 蒸水蛋 Steamed Egg Custard", ingredients: ["雞蛋 2 隻 (Eggs x2)", "溫水 雞蛋體積的1.5倍 (Warm water 1.5x egg volume)", "熟抽 1 茶匙 (Light soy sauce x1 tsp)"], steps: ["雞蛋打散，加入溫水 and 少許鹽攪勻，用濾網過濾泡泡。(Beat eggs, mix with warm water and salt, strain to remove bubbles.)", "蓋上保鮮膜（戳幾個小孔），中火蒸 8-10 分鐘。(Cover with plastic wrap with poke holes, steam over medium heat for 8-10 mins.)", "出鍋後淋上少許熟油 and 生抽即可。(Drizzle with a bit of cooked oil and soy sauce before serving.)"] },
+        9: { title: "09. 粟米魚塊 Fried Fish Fillet in Corn Sauce", ingredients: ["魚柳 250克 (Fish fillet 200g)", "粟米蓉 1 罐 (Cream style corn x1 can)", "雞蛋 1 隻 (Egg x1)", "生粉 適量 (Cornstarch suitable amount)"], steps: ["魚柳切塊，沾上蛋液及生粉，炸至金黃撈起。(Cut fish into chunks, dip in egg and starch, deep fry until golden.)", "將粟米蓉倒入鍋中煮滾，可加少許水及鹽調味。(Pour cream corn into a pot, bring to boil, adjust with water and salt.)", "將熱呼呼的粟米汁淋在炸好的魚塊上。(Pour the hot corn sauce over the fried fish fillets.)"] },
+        10: { title: "10. 香菇蒸滑雞 Steamed Chicken with Shiitake Mushrooms", ingredients: ["雞肉塊 300克 (Chicken pieces 300g)", "乾香菇 4 朵 [浸軟切條] (Dried mushrooms x4)", "薑絲 少許 (Shredded ginger suitable amount)", "蠔油及生粉 各1茶匙 (Oyster sauce & cornstarch x1 tsp)"], steps: ["雞肉塊與香菇絲、薑絲、蠔油、生粉、油拌勻醃製 20 分鐘。(Marinate chicken with mushrooms, ginger, oyster sauce, and starch for 20 mins.)", "將食材平鋪盤中，避免重疊以求熟度均勻。(Spread evenly on a plate to ensure even cooking.)", "大火蒸 15 分鐘至雞肉全熟。(Steam over high heat for 15 minutes until the chicken is tender and fully cooked.)"] },
+        11: { title: "11. 豆豉鯪魚油麥菜 Stir-fried Indian Lettuce with Dace", ingredients: ["油麥菜 300克 (Indian lettuce 300g)", "罐頭豆豉鯪魚 半罐 (Canned dace with black beans x0.5 can)", "蒜蓉 1 茶匙 (Minced garlic x1 tsp)"], steps: ["油麥菜洗淨切段；鯪魚稍為撕成小塊備用。(Wash lettuce and cut into sections. Tear the dace into small pieces.)", "熱鍋不用下油，直接下罐頭內的豆豉、油和蒜蓉爆香。(Heat pan without extra oil, use oil/black beans from the can and garlic to sauté.)", "下油麥菜大火翻炒，加入鯪魚肉快速炒勻至蔬菜變軟即可。(Stir-fry lettuce on high heat, add fish, toss until veg is tender.)"] },
+        12: { title: "12. 涼瓜炒牛肉 Stir-fried Beef with Bitter Melon", ingredients: ["涼瓜/苦瓜 1 條 (Bitter melon x1)", "牛肉片 150克 (Sliced beef 150g)", "蒜蓉豆豉 1 湯匙 (Garlic black bean sauce x1 tbsp)"], steps: ["涼瓜去瓤切片，用鹽醃 10 分鐘洗淨以減苦味。(De-seed bitter melon, slice, rub with salt for 10 mins and rinse.)", "牛肉炒至 8 熟盛起。爆香蒜蓉豆豉，下涼瓜炒至稍軟。(Stir-fry beef to 80% done, set aside. Sauté black bean sauce, add bitter melon.)", "倒回牛肉，加少許糖和水，蓋上鍋蓋燜 2 分鐘即可。(Return beef, add a pinch of sugar and water, cover and simmer for 2 mins.)"] },
+        13: { title: "13. 洋蔥豬扒 Pork Chop with Onions", ingredients: ["豬扒 3 塊 (Pork chops x3)", "洋蔥 1 個 [切絲] (Onion x1 [sliced])", "生抽及糖 適量 (Soy sauce & sugar suitable amount)"], steps: ["豬扒用刀背拍鬆，醃味後煎至兩面金黃熟透盛起。(Tenderize pork chops with knife back, marinate and pan-fry until golden.)", "炒香洋蔥絲至軟身及散發甜味。(Stir-fry onion slices until soft and fragrant.)", "加入豬扒、生抽、糖及少許水，翻炒至汁乾。(Add pork chops, soy sauce, sugar, and water, simmer until sauce thickens.)"] },
+        14: { title: "14. 紅蘿蔔粟米豬骨湯 Carrot & Corn Pork Bone Soup", ingredients: ["紅蘿蔔 1 條 (Carrot x1)", "粟米 1 條 (Corn x1)", "豬骨 300克 (Pork bones 300g)", "蜜棗 2 粒 (Honey dates x2)"], steps: ["豬骨汆水洗淨；紅蘿蔔及粟米去皮切大塊。(Blanch pork bones. Peel and chop carrot and corn into large chunks.)", "湯鍋注入清水，放入所有食材，大火煮滾。(Fill soup pot with water, add all ingredients, bring to a boil.)", "轉小火煲 1.5 至 2 小時，最後加鹽調味。(Turn to low heat and simmer for 1.5 to 2 hours. Season with salt.)"] },
+        15: { title: "15. 節瓜粉絲蝦米煲 Braised Fuzzy Melon with Vermicelli", ingredients: ["節瓜 2 個 (Fuzzy melons x2)", "粉絲 1 紮 [浸軟] (Vermicelli x1 bundle)", "蝦米 1 湯匙 [浸軟] (Dried shrimps x1 tbsp)", "蒜頭 2 瓣 (Garlic x2 cloves)"], steps: ["節瓜去皮切條。爆香蒜頭及蝦米。(Peel and slice fuzzy melons. Sauté garlic and dried shrimps.)", "加入節瓜條翻炒，倒入半碗水，蓋上鍋蓋燜 5 分鐘。(Add fuzzy melon, pour in half a bowl of water, cover and simmer for 5 mins.)", "加入粉絲及少許生抽，煮至粉絲吸乾湯汁即可。(Add vermicelli and soy sauce, cook until vermicelli absorbs the soup.)"] },
+        16: { title: "16. 豆腐火腩煲 Braised Tofu with Roast Pork", ingredients: ["炸豆腐/板豆腐 1 盒 (Tofu x1 pack)", "燒肉/火腩 200克 (Roast pork 200g)", "蒜頭及薑片 少許 (Garlic & ginger suitable amount)", "蠔油 1 湯匙 (Oyster sauce x1 tbsp)"], steps: ["豆腐切塊煎至表面金黃。爆香薑、蒜及燒肉。(Slice tofu and pan-fry till golden. Sauté ginger, garlic, and roast pork.)", "加入豆腐、蠔油、少許糖及半碗水煮滾。(Add tofu, oyster sauce, a pinch of sugar, and half a bowl of water. Bring to boil.)", "轉小火燜煮 5 分鐘，可轉入砂鍋中熱騰騰上桌。(Simmer for 5 mins over low heat. Serve in a clay pot if preferred.)"] },
+        17: { title: "17. 肉碎蒸豆腐 Steamed Tofu with Minced Pork", ingredients: ["嫩豆腐 1 盒 (Silken tofu x1 box)", "豬肉碎 100克 (Minced pork 100g)", "蔥花 少許 (Green onions suitable amount)", "生抽 1 湯匙 (Soy sauce x1 tbsp)"], steps: ["肉碎用生抽醃好，下鍋炒熟備用。(Marinate minced pork with soy sauce and stir-fry until cooked.)", "嫩豆腐切厚片排在盤中，大火蒸 5 分鐘，倒掉多餘水分。(Slice tofu, arrange on plate, steam for 5 mins, drain excess water.)", "將炒好的肉碎鋪在豆腐上，撒上蔥花即可。(Spread the cooked minced pork over tofu and garnish with scallions.)"] },
+        18: { title: "18. 荷蘭豆炒臘腸 Stir-fried Snow Peas with Chinese Sausage", ingredients: ["荷蘭豆 200克 (Snow peas 200g)", "廣東臘腸 1-2 條 (Chinese sausages x1-2)", "蒜蓉 1 茶匙 (Minced garlic x1 tsp)"], steps: ["荷蘭豆撕去老筋洗淨；臘腸斜切薄片。(String and wash snow peas. Thinly slice Chinese sausage diagonally.)", "下臘腸慢火炒至出油及變透明，盛起備用。(Stir-fry sausage over low heat until oil renders and turns translucent, set aside.)", "爆香蒜蓉，下荷蘭豆大火快炒，倒回臘腸加少許鹽炒勻。(Sauté garlic, fry snow peas on high heat, return sausage, salt, and mix.)"] },
+        19: { title: "19. 清炒芥蘭 Stir-fried Chinese Kale (Gai Lan)", ingredients: ["芥蘭 300克 (Chinese kale 300g)", "薑片 3 片 (Ginger slices x3)", "糖及鹽 各少許 (Sugar & salt suitable amount)", "米酒 1 茶匙 (Rice wine x1 tsp)"], steps: ["芥蘭洗淨，粗莖部分可稍微削皮。(Wash kale, lightly peel the thick stems if necessary.)", "熱鍋下油爆香薑片，下芥蘭大火爆炒。(Heat oil, sauté ginger slices, add kale and stir-fry vigorously on high heat.)", "加入鹽、糖調味，沿鍋邊淋入米酒，炒至蔬菜轉深綠色即可。(Season with salt and sugar, drizzle rice wine around the pan edge, toss until done.)"] },
+        20: { title: "20. 鹹蛋蒸肉餅 Steamed Pork Patty with Salted Egg", ingredients: ["豬肉碎 250克 (Minced pork 250g)", "鹹蛋 1 隻 (Salted egg x1)", "生粉及生抽 各少許 (Cornstarch & soy sauce suitable amount)"], steps: ["肉碎加入鹹蛋蛋白、生粉、生抽及少許水攪拌至起膠。(Mix minced pork with salted egg white, starch, soy sauce, and water.)", "將肉碎平鋪盤中，將鹹蛋黃放在肉餅正中央。(Flatten pork into a patty on a plate, place the salted egg yolk in the center.)", "大火蒸 12 分鐘至完全熟透。(Steam over high heat for 12 minutes until fully cooked.)"] },
+        21: { title: "21. 豉椒炒蜆 Stir-fried Clams in Black Bean Sauce", ingredients: ["鮮蜆 500克 [已吐沙] (Fresh clams 500g)", "蒜蓉豆豉醬 1.5 湯匙 (Garlic black bean sauce x1.5 tbsp)", "紅椒及蔥段 少許 (Red pepper & green onions suitable amount)"], steps: ["蜆隻放入沸水中仙水，至稍微張口即撈起瀝乾。(Blanch clams in boiling water, remove as soon as they slightly open.)", "起油鍋爆香蒜蓉豆豉醬、紅椒絲及蔥段。(Heat oil, sauté garlic black bean sauce, red peppers, and green onions.)", "加入蜆隻大火狂翻炒 1-2 分鐘，確保醬汁均勻包裹。(Add clams, stir-fry vigorously on high heat for 1-2 mins until well coated.)"] },
+        22: { title: "22. 粟米肉粒炒飯 Corn and Pork Fried Rice", ingredients: ["冷飯 2 碗 (Cold cooked rice x2 bowls)", "豬肉粒 80克 (Diced pork 80g)", "粟米粒 4 湯匙 (Sweet corn kernels x4 tbsp)", "雞蛋 1 隻 (Egg x1)"], steps: ["肉粒先炒熟備用；雞蛋打散倒入冷飯中拌勻。(Cook diced pork and set aside. Mix beaten egg into cold rice.)", "熱鍋下油，倒入裹了蛋液的白飯大火炒至粒粒分明。(Heat oil, fry egg-coated rice on high heat until grains separate.)", "加入粟米粒和肉粒翻炒，加鹽調味即可。(Add corn kernels and pork, season with salt and toss well.)"] },
+        23: { title: "23. 羅宋湯 Hong Kong Style Borscht Soup", ingredients: ["牛腩/牛腱 200克 (Beef brisket 200g)", "椰菜 半個 (Cabbage x0.5)", "番茄 2 個、紅蘿蔔 1 條 (Tomatoes x2, Carrot x1)", "番茄膏 2 湯匙 (Tomato paste x2 tbsp)"], steps: ["牛肉切塊仙水；其餘蔬菜洗淨切件。(Chop and blanch beef. Wash and cut all vegetables into chunks.)", "用少許油略為炒香番茄膏、番茄及蔬菜。(Lightly sauté tomato paste, tomatoes, and veg in a pot with a bit of oil.)", "加入清水及牛肉，大火煮滾後轉小火煲 2 小時，加鹽及胡椒粉調味。(Add water & beef, boil then simmer for 2 hours. Season with salt & pepper.)"] },
+        24: { title: "24. 南乳燜蓮藕 Braised Lotus Root with Fermented Red Bean Curd", ingredients: ["蓮藕 1 節 (Lotus root x1 section)", "南乳 1 塊 (Red fermented bean curd x1 cube)", "蒜頭 2 瓣 (Garlic x2 cloves)", "糖 1 茶匙 (Sugar x1 tsp)"], steps: ["蓮藕去皮切厚片；南乳用少許水壓碎拌勻。(Peel and slice lotus root. Mash red bean curd cube with a little water.)", "爆香蒜頭，下南乳醬炒香，加入蓮藕片翻炒。(Sauté garlic, add bean curd paste, then add lotus root slices.)", "加入足夠的水沒過蓮藕，加糖，蓋上鍋蓋小火燜煮 30 分鐘。(Add water to cover lotus root, add sugar, cover and simmer for 30 mins.)"] },
+        25: { title: "25. 蒸鱸魚 Steamed Sea Bass", ingredients: ["新鮮鱸魚 1 條 (Fresh sea bass x1)", "薑絲及蔥絲 大量 (Shredded ginger & scallions generic amount)", "蒸魚豉油 2 湯匙 (Seasoned soy sauce x2 tbsp)"], steps: ["鱸魚洗淨洗淨，盤底及魚身鋪上薑絲。(Clean sea bass, place ginger underneath and inside the fish.)", "大火蒸 9-11 分鐘。出鍋後把盤子裡的蒸魚水倒掉。(Steam on high heat for 9-11 mins. Remove from heat and discard plate water.)", "鋪上蔥絲，澆上滾油，最後在邊緣淋上蒸魚豉油。(Top with green onions, flash with smoking hot oil, pour soy sauce around.)"] },
+        26: { title: "26. 滑蛋蝦仁 Scrambled Eggs with Shrimp", ingredients: ["蝦仁 100克 (Peeled shrimps 100g)", "雞蛋 3 隻 (Eggs x3)", "韭黃/蔥花 少許 (Yellow chives or scallions suitable amount)", "生粉水 1 茶匙 (Cornstarch water x1 tsp)"], steps: ["蝦仁炒至剛熟盛起。雞蛋加入生粉水、鹽及蝦仁拌勻。(Stir-fry shrimp until just cooked, set aside. Mix eggs, starch water, salt, and shrimp.)", "熱鍋下較多的油，中火燒熱，倒入蛋液。(Heat a generous amount of oil over medium heat, pour in the egg mixture.)", "用鏟由外向內輕推，炒至蛋液呈半固態滑嫩狀立即起鍋。(Gently push from outer edges inward, remove as soon as eggs are softly set.)"] },
+        27: { title: "27. 薯仔燜雞塊 Braised Chicken with Potatoes", ingredients: ["雞肉塊 300克 (Chicken pieces 300g)", "薯仔/馬鈴薯 1 大個 (Potato x1 large)", "生抽、老抽、糖 各適量 (Soy sauce, dark soy sauce, sugar suitable amount)"], steps: ["薯仔去皮切塊，煎至表面微黃盛起；雞塊醃製備用。(Peel & chop potato, pan-fry till slightly golden, set aside. Marinate chicken.)", "下雞塊炒至表面變色，加入薯仔及醬油、糖、水。(Stir-fry chicken, add potatoes, soy sauces, sugar, and water.)", "大火煮滾後轉小火，蓋上鍋蓋燜 15-20 分鐘至薯仔變軟。(Bring to boil, turn to low, cover and simmer for 15-20 mins until potatoes are soft.)"] },
+        28: { title: "28. 紹菜粉絲煲 Braised Tientsin Cabbage with Vermicelli", ingredients: ["紹菜/大白菜 300克 (Tientsin cabbage 300g)", "粉絲 1 紮 [浸軟] (Vermicelli x1 bundle)", "蒜頭 2 瓣 (Garlic x2 cloves)", "生抽 1 湯匙 (Soy sauce x1 tbsp)"], steps: ["紹菜洗淨切大塊。熱鍋爆香蒜頭。(Wash cabbage and cut into large pieces. Sauté garlic in a pot.)", "下紹菜炒至軟身，加入大半碗水和生抽，煮滾轉小火燜 5 分鐘。(Add cabbage, fry till soft, add water and soy sauce, simmer for 5 mins.)", "加入粉絲，煮至粉絲變透明並完全吸收湯汁即可。(Add vermicelli, cook until transparent and the soup is fully absorbed.)"] },
+        29: { title: "29. 腰果炒雞丁 Stir-fried Chicken Dices with Cashew Nuts", ingredients: ["雞胸/雞肉丁 200克 (Diced chicken 200g)", "熟腰果 50克 (Roasted cashew nuts 50g)", "西芹或甘筍丁 少許 (Diced celery or carrot generic amount)", "醬油 1 湯匙 (Soy sauce x1 tbsp)"], steps: ["雞丁用生抽和生粉醃好，下鍋炒熟盛起。(Marinate diced chicken with soy sauce and starch, stir-fry until cooked, set aside.)", "下蔬菜丁翻炒至熟，倒回雞丁，加入醬油調味。(Stir-fry diced vegetables until tender, return chicken, season with soy sauce.)", "起鍋前加入熟腰果快速炒勻，保持腰果香脆。(Toss in the roasted cashews right before serving to keep them crunchy.)"] },
+        30: { title: "30. 冬瓜盅 Double-boiled Winter Melon Soup", ingredients: ["冬瓜 1 大塊 (Winter melon x1 large piece)", "瘦肉粒/雞肉粒 100克 (Diced pork/chicken 100g)", "乾金菇/鮮菇、蝦米 少許 (Mushrooms & dried shrimps suitable amount)"], steps: ["冬瓜去籽，如果是大冬瓜盅則掏空中心。肉粒、蝦米先仙水。(De-seed winter melon. Blanch meat dices and dried shrimps.)", "將所有食材及高湯/清水放入冬瓜內（或與冬瓜塊一同放入燉盅）。(Place all ingredients and broth inside the melon or in a stew pot.)", "大火隔水燉煮 1 至 1.5 小時，至冬瓜肉變透明熟透，加鹽調味。(Double-boil/steam for 1 to 1.5 hours until melon flesh is translucent.)"] }
+    };
+
+    // 渲染菜單
+    const menuArea = document.getElementById('menu-area');
+    menuArea.innerHTML = `<div class="column" id="col1"></div><div class="column" id="col2"></div>`;
+    
+    dishes.forEach((d, index) => {
+        const html = `<div class="item" data-id="${d.id}">
+            <span class="icon">${d.icon}</span>
+            <div class="text-box">
+                <div class="title-zh">${d.id < 10 ? '0'+d.id : d.id}. ${d.zh}</div>
+                <div class="title-en">${d.en}</div>
+            </div>
+        </div>`;
+        document.getElementById(index < 15 ? 'col1' : 'col2').innerHTML += html;
+    });
+
+    /* =======================================================
+       8-bit 網頁音訊合成控制核心 (Web Audio API)
+       ======================================================= */
+    let audioCtx = null;
+    function initAudio() {
+        if (!audioCtx) {
+            audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        }
+    }
+
+    // 短嗶聲
+    function playClickSound() {
+        initAudio();
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'square';
+        osc.frequency.setValueAtTime(400, audioCtx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(100, audioCtx.currentTime + 0.1);
+        gain.gain.setValueAtTime(0.05, audioCtx.currentTime);
+        gain.gain.linearRampToValueAtTime(0.001, audioCtx.currentTime + 0.1);
+        osc.connect(gain); gain.connect(audioCtx.destination);
+        osc.start(); osc.stop(audioCtx.currentTime + 0.1);
+    }
+
+    // 金幣叮叮聲
+    function playCoinSound() {
+        initAudio();
+        const now = audioCtx.currentTime;
+        const osc1 = audioCtx.createOscillator(); const gain1 = audioCtx.createGain();
+        osc1.type = 'square'; osc1.frequency.setValueAtTime(987.77, now);
+        gain1.gain.setValueAtTime(0.05, now); gain1.gain.linearRampToValueAtTime(0.001, now + 0.08);
+        osc1.connect(gain1); gain1.connect(audioCtx.destination);
+        
+        const osc2 = audioCtx.createOscillator(); const gain2 = audioCtx.createGain();
+        osc2.type = 'square'; osc2.frequency.setValueAtTime(1318.51, now + 0.08);
+        gain2.gain.setValueAtTime(0.05, now + 0.08); gain2.gain.linearRampToValueAtTime(0.001, now + 0.3);
+        osc2.connect(gain2); gain2.connect(audioCtx.destination);
+        
+        osc1.start(now); osc1.stop(now + 0.08);
+        osc2.start(now + 0.08); osc2.stop(now + 0.3);
+    }
+
+    /* =======================================================
+       事件與彈窗觸發邏輯
+       ======================================================= */
+    const questModal = document.getElementById('quest-modal');
+    const storeModal = document.getElementById('qrModal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalIngredients = document.getElementById('modal-ingredients');
+    const modalSteps = document.getElementById('modal-steps');
+
+    // 點擊菜單打開任務詳情
+    document.querySelectorAll('.item').forEach(item => {
+        item.addEventListener('click', () => {
+            playClickSound();
+            const dishId = item.getAttribute('data-id');
+            const questData = questDatabase[dishId];
+            if (questData) {
+                modalTitle.innerHTML = `✨ ${questData.title} ✨`;
+                modalIngredients.innerHTML = questData.ingredients.map(ing => `<li>${ing}</li>`).join('');
+                modalSteps.innerHTML = questData.steps.map(step => `<li>${step}</li>`).join('');
+                questModal.style.display = 'flex';
+            }
+        });
+    });
+
+    // 關閉菜單詳情彈窗
+    document.getElementById('close-modal-btn').addEventListener('click', () => {
+        playClickSound();
+        questModal.style.display = 'none';
+    });
+
+    // 打開儲值商店 (觸發瑪利歐金幣聲)
+    document.getElementById('supportBtn').onclick = function() {
+        playCoinSound();
+        storeModal.style.display = 'flex';
+    }
+
+    // 關閉儲值商店
+    document.getElementById('closeBtn').onclick = function() {
+        playClickSound();
+        storeModal.style.display = 'none';
+    }
+
+    // 點擊彈窗外部關閉
+    window.addEventListener('click', (e) => {
+        if (e.target === questModal) {
+            playClickSound();
+            questModal.style.display = 'none';
+        }
+        if (e.target === storeModal) {
+            playClickSound();
+            storeModal.style.display = 'none';
+        }
+    });
+</script>
+
+</body>
+</html>
