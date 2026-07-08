@@ -7,51 +7,66 @@
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Noto+Sans+HK:wght=400;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
-        /* 📱 專為手機及窄屏幕設計的優化排版 */
+/* 📱 專為手機及窄屏幕設計的雙排優化排版 */
 @media screen and (max-width: 600px) {
     body {
-        padding: 10px; /* 縮小網頁四周邊距，留更多空間畀內容 */
+        padding: 5px; /* 再縮小四周邊距，留出更多空間給雙排 */
     }
     
     .game-box {
-        padding: 12px; /* 縮小外框內邊距 */
-        border-width: 4px; /* 框線變幼少少 */
-        box-shadow: 6px 6px 0px #3e2723;
+        padding: 8px; /* 縮小外框內邊距 */
+        border-width: 4px;
+        box-shadow: 4px 4px 0px #3e2723;
     }
     
     .main-title {
-        font-size: 22px; /* 縮小標題字體，防止手機上手殘出界 */
+        font-size: 18px; /* 縮小標題，防止出界 */
     }
     
-    .sub-title {
-        font-size: 12px;
-        letter-spacing: 2px;
+    .sub-title-pixel {
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+    
+    /* 這裡提示區的字體也縮小 */
+    .title-container div {
+        font-size: 12px !important; 
+    }
+    .title-container div div {
+        font-size: 8px !important;
     }
     
     .container {
-        gap: 10px; /* 縮小菜單欄位之間的間距 */
+        display: flex;
+        flex-direction: row; /* 強制橫向並排 */
+        flex-wrap: nowrap;   /* 禁止換行（確保一定是左右兩欄） */
+        gap: 6px;            /* 縮小左右欄的間距 */
     }
     
     .column {
-        min-width: 100%; /* 確保喺極細嘅手機上，每一行都順暢貼齊 */
-        gap: 6px;
+        flex: 1;
+        min-width: 0;        /* 解除之前的 320px 限制，允許縮小 */
+        gap: 5px;            /* 縮小菜單上下格子之間的間距 */
     }
     
     .item {
-        padding: 8px; /* 縮小每個菜式格子嘅大細 */
-    }
-    
-    .title-zh {
-        font-size: 16px; /* 縮小菜式名中文字體 */
-    }
-    
-    .en-text {
-        font-size: 8px; /* 縮小英文字體 */
+        padding: 4px 6px;    /* 大幅縮小每個菜式格子的內邊距 */
+        border-width: 2px;   /* 邊框變細 */
     }
     
     .icon {
-        font-size: 14px;
-        margin-right: 8px;
+        font-size: 11px;     /* 縮小 Emoji 圖標 */
+        margin-right: 4px;   /* 縮小圖標與文字的距離 */
+    }
+    
+    .title-zh {
+        font-size: 11px;     /* 大幅縮小菜式中文字體，確保能雙排顯示 */
+        gap: 2px;
+    }
+    
+    .title-en {
+        font-size: 7px;      /* 大幅縮小英文字體 */
+        margin-top: 1px;
     }
 }
 /* 使用你專屬設計的 Base64 像素游標，全網頁（包括按鈕、連結）強制套用 */
